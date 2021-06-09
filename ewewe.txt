@@ -1,0 +1,29 @@
+ <Form>
+  <Form.Group controlId="formBasicEmail">
+    <Form.Label>text</Form.Label>
+    <Form.Control type="text" placeholder="Enter text" onChange={e => this.setState({text : e.target.value})}/>
+  </Form.Group>
+
+  <Form.Group controlId="formBasicPassword">
+    <Form.Label>Image</Form.Label>
+    <Form.Control type="file" placeholder="file" onChange={e => this.setState({file : URL.createObjectURL(e.target.files[0])})}/>
+  </Form.Group>
+ 
+  <Button variant="outline-dark" onClick={this.addTask}>
+    Add
+  </Button>
+</Form>
+
+
+<div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}}>
+    <h1> I am centered </h1>
+</div>
+
+
+
+    <div className="App" style={{overflowY:"scroll"}}>
+<SplitPane split="vertical" minSize="50%" defaultSize="50%" resizerStyle={styles}>
+   <AddTask />
+   <AllTasks />
+</SplitPane>
+    </div>
